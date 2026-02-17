@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-outfit);
+  --font-heading: var(--font-outfit);
+
+  --color-sakura-pink: #fce9ec;    /* Sakura-iro */
+  --color-pale-sakura: #fdf2f5;    /* Usu-zakura */
+  --color-sakura-gray: #e8d3d8;    /* Sakura-nezu */
+  --color-ibis-gray: #dcd0d5;      /* Toki-nezu */
+  --color-coral: #f5b1aa;          /* Sango-iro */
+  --color-light-pink: #f4cccd;     /* Ikkon-zome */
+  --color-light-peach: #f0a986;    /* Shishi-iro */
+  --color-red-plum: #e67f8c;       /* Kobai-iro */
+  --color-light-crimson: #e87a90;  /* Usu-beni */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: #fce9ec; /* Sakura-iro as base background */
+  --foreground: #4a4a4a; /* Dark gray for text */
+  --font-outfit: "Outfit", sans-serif;
+}
+
+@layer utilities {
+  .text-gradient-rainbow {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ff9a9e] via-[#fad0c4] to-[#fad0c4];
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Lenis Smooth Scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
