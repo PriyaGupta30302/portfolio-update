@@ -7,7 +7,7 @@ import { Send } from "lucide-react";
 export default function ContactForm() {
     const formRef = useRef(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-test
+
     useEffect(() => {
         gsap.fromTo(
             formRef.current,
